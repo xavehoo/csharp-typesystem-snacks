@@ -128,3 +128,24 @@ for(int i = 0; i < numbersList.Length; i++)
 }
 
 Console.WriteLine($"La somma dei numeri contenuti nelle locazioni dispari dell'array è: {result}");
+
+// Snack 9: Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
+// Continua a chiedere i numeri all’utente e a inserirli nell’array, fino a quando
+// la somma degli elementi è minore di 50.
+
+int[] userNumbers = new int[50];
+
+Console.WriteLine("Ti chiederò di inserire un numero alla volta fino al momento in cui la somma dei numeri inseriti raggiungerà 50, il valore minimo che puoi inserire è 1.");
+
+int sumCheck = 0;
+int index = 0;
+
+while (sumCheck < 50)
+{
+    Console.WriteLine($"Inserisci il {index + 1}° numero: ");
+    userNumbers[index] = int.Parse(Console.ReadLine());
+    sumCheck += userNumbers[index];
+    index++;
+}
+
+Console.WriteLine($"Fine! La somma dei numeri inseriti ha raggiunto il valore di: {sumCheck}, la quantità di numeri inseriti è pari a: {index}");
