@@ -64,3 +64,17 @@ for(int i = 1;i < 10; i++)
 }
 
 Console.WriteLine($"La somma dei numeri da 2 a 10 è pari a {resultAccumulator} ed il valore medio è {resultAccumulator / 9}");
+
+//Snack 5: Il software chiede all’utente di inserire un numero.
+//Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo.
+
+Console.Write("Inserisci un numero intero e riconoscerò se è pari:");
+int userChoosenNumber = int.Parse(Console.ReadLine());
+
+if(userChoosenNumber % 2 == 0)
+{
+    Console.WriteLine($"Il numero che hai inserito è pari: {userChoosenNumber}");
+} else
+{
+    Console.WriteLine($"Il numero che hai inserito è dispari, il numero successivo al numero inserito è: {userChoosenNumber + 1}");
+}
