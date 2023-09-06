@@ -53,3 +53,14 @@ for(int i = 0; i < 10; i++)
 }
 
 Console.WriteLine($"{Environment.NewLine}La somma dei numeri inseriti è: {sumAccumulator}");
+
+// Snack 4: Calcola la somma e la media dei numeri da 2 a 10.
+
+int resultAccumulator = new int();
+
+for(int i = 1;i < 10; i++)
+{
+    resultAccumulator += (i + 1);
+}
+
+Console.WriteLine($"La somma dei numeri da 2 a 10 è pari a {resultAccumulator} ed il valore medio è {resultAccumulator / 9}");
