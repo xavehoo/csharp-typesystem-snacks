@@ -38,3 +38,18 @@ if(firstChoosenWord.Length > secondChoosenWord.Length)
 {
     Console.WriteLine("Le parole inserite hanno la stessa lunghezza");
 }
+
+// Snack 3: Il software deve chiedere per 10 volte all’utente di inserire un numero.
+// Il programma stampa la somma di tutti i numeri inseriti.
+
+Console.WriteLine("Inserisci 10 numeri uno dopo l'altro e ne eseguirò la somma");
+
+float sumAccumulator = new float();
+
+for(int i = 0; i < 10; i++)
+{
+    Console.Write($"Inserisci il {(i + 1)}° numero: ");
+    sumAccumulator += float.Parse(Console.ReadLine());
+}
+
+Console.WriteLine($"{Environment.NewLine}La somma dei numeri inseriti è: {sumAccumulator}");
