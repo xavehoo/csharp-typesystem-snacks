@@ -149,3 +149,24 @@ while (sumCheck < 50)
 }
 
 Console.WriteLine($"Fine! La somma dei numeri inseriti ha raggiunto il valore di: {sumCheck}, la quantità di numeri inseriti è pari a: {index}");
+
+// Snack 10: Fai inserire un numero, che chiameremo N, all’utente. Genera N array,
+// ognuno formato da 10 numeri casuali tra 1 e 100. Ogni volta che ne crei uno, stampalo a schermo.
+
+Console.Write("Dimmi quanti array di numeri casiali ad 1 a 100 vuoi generare: ");
+
+int arrayQuantity = int.Parse(Console.ReadLine());
+
+Random random = new Random();
+
+for (int i = 0; i < arrayQuantity; i++)
+{
+    int[] randomNumbers = new int[10];
+    Console.Write($"Il {i + 1}° array creato è composto dai seguenti valori: ");
+    for(int j = 0; j < 10; j++)
+    {
+        randomNumbers[j] = random.Next(1, 100);
+        Console.Write($"{randomNumbers[j]} ");
+    }
+    Console.WriteLine();
+}
