@@ -113,3 +113,18 @@ for(int i = 0; i < 6; i++)
         Console.WriteLine("Numero dispari salvato!");
     }
 }
+
+// Snack 8: Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari.
+
+int[] numbersList = { 1, 6, 3, 6, 7, 9, 34, 54, 12, 89, 3, 12, 90, 11, 51, 63, 9 };
+int result = new int();
+
+for(int i = 0; i < numbersList.Length; i++)
+{
+    if(i % 2 != 0)
+    {
+        result += numbersList[i];
+    }
+}
+
+Console.WriteLine($"La somma dei numeri contenuti nelle locazioni dispari dell'array è: {result}");
