@@ -78,3 +78,20 @@ if(userChoosenNumber % 2 == 0)
 {
     Console.WriteLine($"Il numero che hai inserito è dispari, il numero successivo al numero inserito è: {userChoosenNumber + 1}");
 }
+
+// Snack 6: In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby.
+// Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.
+
+string[] guestList = { "alex", "luca", "paola", "chiara", "simone" };
+
+Console.Write("Dimmi il tuo nome e ti dirò se sei invitato alla festa: ");
+string nameToCheck = Console.ReadLine();
+
+if(guestList.Contains(nameToCheck.ToLower()))
+{
+    Console.WriteLine("Prego, entri pure, lei è nella lista!");
+} else
+{
+    Console.WriteLine("Mi dispiace ma il suo nome non è presente nella lista.");
+
+}
