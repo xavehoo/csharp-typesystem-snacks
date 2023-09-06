@@ -95,3 +95,21 @@ if(guestList.Contains(nameToCheck.ToLower()))
     Console.WriteLine("Mi dispiace ma il suo nome non è presente nella lista.");
 
 }
+
+// Snack 7: Crea un array vuoto. Chiedi per 6 volte all’utente di inserire un numero,
+// se è dispari inseriscilo nell’array.
+
+int[] oddsNumberContainer = new int[6];
+
+Console.WriteLine("Ti chiedo di inserire 6 numeri interi e salverò in memoria i numeri dispari che inserirai.");
+
+for(int i = 0; i < 6; i++)
+{
+    Console.Write($"Inserisci il {i + 1}° numero: ");
+    int userNumber = int.Parse(Console.ReadLine());
+    if (userNumber % 2 != 0)
+    {
+        oddsNumberContainer[i] = userNumber;
+        Console.WriteLine("Numero dispari salvato!");
+    }
+}
