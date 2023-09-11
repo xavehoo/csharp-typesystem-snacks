@@ -9,7 +9,7 @@ Console.WriteLine("Snack 8: Somma di numeri nelle locazioni dispari dell'array")
 Console.WriteLine("Snack 9: Somma finchè i numeri inseriti sommati sono pari o superiori a 50");
 Console.WriteLine("Snack 10: Generatore di array con numeri casuali da 1 a 100");
 Console.Write("Inserisci un numero da 1 a 10 per decidere quale snack eseguire: ");
-int userChoose = int.Parse(Console.ReadLine());
+int userChoose = int.Parse(Console.ReadLine() ?? "0");
 
 Console.WriteLine();
 
@@ -20,18 +20,20 @@ switch (userChoose)
 
         Console.WriteLine("Inserisci due valori numerici e ti dirò quale dei due è maggiore.");
         Console.Write("Inserisci il primo numero: ");
-        float firstChoosenNumber = float.Parse(Console.ReadLine());
+        float firstChoosenNumber = float.Parse(Console.ReadLine() ?? "0");
 
         Console.Write("Inserisci il secondo numero: ");
-        float secondChoosenNumber = float.Parse(Console.ReadLine());
+        float secondChoosenNumber = float.Parse(Console.ReadLine() ?? "0");
 
-        if(firstChoosenNumber > secondChoosenNumber)
+        if (firstChoosenNumber > secondChoosenNumber)
         {
             Console.WriteLine($"Il numero maggiore è: {firstChoosenNumber}");
-        } else if(firstChoosenNumber < secondChoosenNumber)
+        }
+        else if (firstChoosenNumber < secondChoosenNumber)
         {
             Console.WriteLine($"Il numero maggiore è: {secondChoosenNumber}");
-        } else
+        }
+        else
         {
             Console.WriteLine("I due numeri inseriti sono uguali");
         }
@@ -42,18 +44,20 @@ switch (userChoose)
 
         Console.WriteLine("Inserisci due parole e ti dirò quale delle due è la più lunga");
         Console.Write("Inserisci la prima parola: ");
-        string firstChoosenWord = Console.ReadLine();
+        string firstChoosenWord = Console.ReadLine() ?? string.Empty;
 
         Console.Write("Inserisci la seconda parola: ");
-        string secondChoosenWord = Console.ReadLine();
+        string secondChoosenWord = Console.ReadLine() ?? string.Empty;
 
-        if(firstChoosenWord.Length > secondChoosenWord.Length)
+        if (firstChoosenWord.Length > secondChoosenWord.Length)
         {
             Console.WriteLine($"La parola più lunga inserita è: {firstChoosenWord}");
-        } else if (firstChoosenWord.Length < secondChoosenWord.Length)
+        }
+        else if (firstChoosenWord.Length < secondChoosenWord.Length)
         {
             Console.WriteLine($"La parola più lunga inserita è: {secondChoosenWord}");
-        } else
+        }
+        else
         {
             Console.WriteLine("Le parole inserite hanno la stessa lunghezza");
         }
@@ -64,12 +68,12 @@ switch (userChoose)
 
         Console.WriteLine("Inserisci 10 numeri uno dopo l'altro e ne eseguirò la somma");
 
-        float sumAccumulator = new float();
+        float sumAccumulator = new();
 
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             Console.Write($"Inserisci il {(i + 1)}° numero: ");
-            sumAccumulator += float.Parse(Console.ReadLine());
+            sumAccumulator += float.Parse(Console.ReadLine() ?? "0");
         }
 
         Console.WriteLine($"{Environment.NewLine}La somma dei numeri inseriti è: {sumAccumulator}");
@@ -77,9 +81,9 @@ switch (userChoose)
     case 4:
         // Snack 4: Calcola la somma e la media dei numeri da 2 a 10.
 
-        int resultAccumulator = new int();
+        int resultAccumulator = new();
 
-        for(int i = 1;i < 10; i++)
+        for (int i = 1; i < 10; i++)
         {
             resultAccumulator += (i + 1);
         }
@@ -91,12 +95,13 @@ switch (userChoose)
         //Se il numero inserito è pari, stampa il numero, se è dispari, stampa il numero successivo.
 
         Console.Write("Inserisci un numero intero e riconoscerò se è pari:");
-        int userChoosenNumber = int.Parse(Console.ReadLine());
+        int userChoosenNumber = int.Parse(Console.ReadLine() ?? "0");
 
-        if(userChoosenNumber % 2 == 0)
+        if (userChoosenNumber % 2 == 0)
         {
             Console.WriteLine($"Il numero che hai inserito è pari: {userChoosenNumber}");
-        } else
+        }
+        else
         {
             Console.WriteLine($"Il numero che hai inserito è dispari, il numero successivo al numero inserito è: {userChoosenNumber + 1}");
         }
@@ -108,12 +113,13 @@ switch (userChoose)
         string[] guestList = { "alex", "luca", "paola", "chiara", "simone" };
 
         Console.Write("Dimmi il tuo nome e ti dirò se sei invitato alla festa: ");
-        string nameToCheck = Console.ReadLine();
+        string nameToCheck = Console.ReadLine() ?? string.Empty;
 
-        if(guestList.Contains(nameToCheck.ToLower()))
+        if (guestList.Contains(nameToCheck.ToLower()))
         {
             Console.WriteLine("Prego, entri pure, lei è nella lista!");
-        } else
+        }
+        else
         {
             Console.WriteLine("Mi dispiace ma il suo nome non è presente nella lista.");
 
@@ -127,10 +133,10 @@ switch (userChoose)
 
         Console.WriteLine("Ti chiedo di inserire 6 numeri interi e salverò in memoria i numeri dispari che inserirai.");
 
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             Console.Write($"Inserisci il {i + 1}° numero: ");
-            int userNumber = int.Parse(Console.ReadLine());
+            int userNumber = int.Parse(Console.ReadLine() ?? "0");
             if (userNumber % 2 != 0)
             {
                 oddsNumberContainer[i] = userNumber;
@@ -142,11 +148,11 @@ switch (userChoose)
         // Snack 8: Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari.
 
         int[] numbersList = { 1, 6, 3, 6, 7, 9, 34, 54, 12, 89, 3, 12, 90, 11, 51, 63, 9 };
-        int result = new int();
+        int result = new();
 
-        for(int i = 0; i < numbersList.Length; i++)
+        for (int i = 0; i < numbersList.Length; i++)
         {
-            if(i % 2 != 0)
+            if (i % 2 != 0)
             {
                 result += numbersList[i];
             }
@@ -169,7 +175,7 @@ switch (userChoose)
         while (sumCheck < 50)
         {
             Console.WriteLine($"Inserisci il {index + 1}° numero: ");
-            userNumbers[index] = int.Parse(Console.ReadLine());
+            userNumbers[index] = int.Parse(Console.ReadLine() ?? "0");
             sumCheck += userNumbers[index];
             index++;
         }
@@ -182,15 +188,15 @@ switch (userChoose)
 
         Console.Write("Dimmi quanti array di numeri casiali da 1 a 100 vuoi generare: ");
 
-        int arrayQuantity = int.Parse(Console.ReadLine());
+        int arrayQuantity = int.Parse(Console.ReadLine() ?? "0");
 
-        Random random = new Random();
+        Random random = new();
 
         for (int i = 0; i < arrayQuantity; i++)
         {
             int[] randomNumbers = new int[10];
             Console.Write($"Il {i + 1}° array creato è composto dai seguenti valori: ");
-            for(int j = 0; j < 10; j++)
+            for (int j = 0; j < 10; j++)
             {
                 randomNumbers[j] = random.Next(1, 100);
                 Console.Write($"{randomNumbers[j]} ");
@@ -198,7 +204,7 @@ switch (userChoose)
             Console.WriteLine();
         }
         break;
-    default: 
+    default:
         Console.WriteLine("Il numero che hai inserito non è compreso tra 1 e 10.");
         break;
 }
